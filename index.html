@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="gradient-container"></div>
+  <div id="blur-overlay"></div>
+
+  <div class="quiz-container">
+    <h1 style="text-align:center">Female Anatomy Quiz</h1>
+  <div>
+    <label>
+      Grading Mode:
+      <select id="grading-mode">
+        <option value="end">Grade at End</option>
+        <option value="instant">Instant Feedback</option>
+
+      </select>
+    </label>
+  </div>
+  <div style=position: relative>
+    <div class="floating-graphics left">
+      <img src="Lantern.png" alt="Chinese Lantern" class="floating-image">
+    </div>
+  </div>
+  
+
+  <!-- Section 1: Label & Image -->
+  <section id="label-image-section">
+  <h3>Label the whole reproductive system:</h3>
+  <button id="toggle-image-btn">Show Answer Key</button>
+  <img id="diagram-img" src="anatomydiagram.png" alt="Reproductive System Diagram">
+  </section>
+  <br><br>
+
+  <!-- Section 2: Free Text or Static Text -->
+
+
+  <!-- Section 3: MCQ / T-F -->
+  <section id="mcq-section">
+    <h3>Now time for some multiple choice:</h3>
+    <!-- JS will populate this -->
+  </section>
+  <button onclick="gradeQuiz()">Grade Quiz</button>
+  <h4>Reload to try again!</h4>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

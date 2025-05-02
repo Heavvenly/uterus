@@ -1,0 +1,208 @@
+.quiz-image {
+  width: 400px;
+  position: relative;
+}
+
+.label-input {
+  position: absolute;
+  border: 1px solid #aaa;
+  padding: 2px;
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.free-text-block, .mcq-block {
+  margin-bottom: 15px;
+}
+.free-text-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 15px;
+}
+
+.free-text-block .question,
+.free-text-block .info-text {
+  flex: 1;
+}
+
+.free-text-block input {
+  flex: 1;
+  max-width: 250px;
+  font-family: 'Fredoka One', sans-serif;
+}
+select{
+  font-family: 'Fredoka One', sans-serif;
+}
+button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: lighter;
+
+}
+
+img{
+  border-radius: 8px;
+  width: 70%;
+  height: 70%;
+}
+.correct {
+  border-color: green !important;
+  background-color: #e0ffe0;
+}
+
+.wrong {
+  border-color: red !important;
+  background-color: #ffe0e0;
+}
+
+.label-input, .line-target {
+  position: absolute;
+}
+
+.line-target {
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+body {
+  background-color: #ffccd5; /* your warm pink/orange tone */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Fredoka One', sans-serif;
+  color: #ffb6c1; /* deep coral orange */
+
+
+}
+
+.quiz-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+  align-items: center;
+  padding-top: 10px;
+  margin-top: 80px;
+}
+h1 {
+  margin-bottom: 1rem;
+}
+#quiz-image{
+   border-radius: 200px;
+   align-self: flex-start;
+}
+.correct {
+  background-color: #b5f7b5 !important;
+}
+.wrong {
+  background-color: #f7b5b5 !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600%;  /* Adjust to fit your container's size */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png");
+  background-size: auto;  /* Keeps the original size of the image */
+  background-repeat: repeat;  /* Tiles the background image */
+  background-color: blue;
+  z-index: -1;
+  opacity: 0.1;
+}
+#blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700%;
+  backdrop-filter: blur(120px);
+  z-index: 9999;
+  opacity: 0; /* Initially invisible */
+  pointer-events: none;
+  transition: opacity 0.5s ease; /* Smooth fade-in and fade-out */
+}
+
+
+.gradient-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600%;
+  background: radial-gradient(circle, #ffe0f0, #ffb6c1, #ff87a2, #ff5e81);
+  filter: blur(10px);
+  background-size: 300% 300%;
+  animation: gradientFlow 15s ease infinite;
+  z-index: -2;
+  transition: background 1s ease, filter 1s ease;
+  /* Smooth transition */
+}
+
+/* Keyframes for random and cooler animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  25% {
+    background-position: 40% 60%;
+  }
+
+  50% {
+    background-position: 100% 80%;
+  }
+
+  75% {
+    background-position: 20% 40%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.floating-graphics {
+  position: absolute;
+  z-index: 20; /* Place behind main content */
+}
+
+.left {
+  left: 5%; /* Start from left of the screen */
+}
+
+.right {
+  right: -10%; /* Start from right of the screen */
+}
+
+.floating-image {
+  width: 300px; /* Adjust the size as needed */
+  height: auto;
+  animation: float 10s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg); /* Move up and rotate */
+  }
+  100% {
+    transform: translateY(0) rotate(360deg); /* Move back down and rotate */
+  }
+}
